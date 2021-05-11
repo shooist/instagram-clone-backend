@@ -1,9 +1,11 @@
 const functions = require("firebase-functions");
 const express = require("express");
+const cors = require("cors");
 const messageRouter = require("./routers/articles/route");
 
 const app = express();
 const region = "asia-northeast1";
+app.use(cors({ origin: true }));
 app.use("/", messageRouter);
 
 // // Create and Deploy Your First Cloud Functions
